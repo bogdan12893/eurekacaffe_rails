@@ -5,11 +5,21 @@ ruby '2.5.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
-gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+#stylesheets
+gem 'bootstrap', '4.1.1'
+gem 'font-awesome-sass', '~> 5.2.0'
+#jquery
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+gem 'jquery-ui-rails', '~> 6.0.1'
+gem 'touchpunch-rails', '~> 1.0', '>= 1.0.3'
+gem 'sprockets-rails', '~> 3.2', '>= 3.2.1'
+gem 'popper_js', '~> 1.14', '>= 1.14.3'
+#haml
+gem 'haml', '~> 5.0', '>= 5.0.4'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails', '~> 5.0', '>= 5.0.7'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes

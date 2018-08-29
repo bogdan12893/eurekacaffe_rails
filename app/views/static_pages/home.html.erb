@@ -1,0 +1,75 @@
+<!--Sorting Bar-->
+  <div class="filter-bar">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-7">
+          <nav class="navbar navbar-expand-lg">
+            <div class="" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                  <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    CATEGORY
+                    <i class="fas fa-angle-down"></i>
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Category 1</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Category 2</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    SORTING
+                    <i class="fas fa-angle-down"></i>
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Sorting 1</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Sorting 2</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    VEGETARIAN
+                    <i class="fas fa-angle-down"></i>
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Vegetarian 1</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Vegetarian 2</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+        <!--Price range slider-->
+        <div class="col-sm-5">
+          <div class="row">
+            <div class="col-sm-3">
+              <p class="price">PRICE<span id="rangeMin" class="price"></span></p>
+            </div>
+            <div id="flat-slider" class="flat-slider col-sm-6"></div>
+            <div class="col-sm-2">
+              <p class="price">
+                <p id="rangeMax" class="price"></p>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Example row of columns -->
+    <div id="food-card" class="row">
+      <!--The card is generated in JS-->
+    </div>
+  </div>
+
+<%= javascript_tag do %>
+  $(document).ready(function() {
+    initPage();
+  });
+<% end %>

@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>EurekacaffeRails</title>
+    <title>Eureka Caffe Rails</title>
+    <link rel="icon" type="image/png" href="/assets/ico.png">
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'layouts/header' %>
+      <%= yield %>
+    <%= render 'layouts/footer' %>
   </body>
 </html>

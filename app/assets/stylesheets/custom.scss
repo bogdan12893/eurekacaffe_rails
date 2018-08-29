@@ -1,0 +1,127 @@
+@import 'variables';
+
+.jumbotron {
+    background-image:url(asset-path('bnr.jpg'));
+    height:500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0%;
+    margin-bottom: 0%;
+  }
+
+  .col-sm-3 {
+    padding-right: 0%;
+    padding-left: 0%;
+  }
+  
+  /*custom animation for the cards*/
+  .card {
+    transition: transform .2s; /* Animation */
+    &:hover {
+      transform: scale(1.05);
+      z-index:1;
+    }
+  }
+  
+  /*custom color for nav link*/
+  
+  a, .nav-link{
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 12px;
+    &:hover {
+      color: $my-orange;
+      text-decoration: none
+    }
+  }
+  
+  .card-text{
+    color: $my-orange;
+  }
+  
+  h6 {
+    color: rgb(95, 95, 95);
+    font-weight: 100;
+  }
+  
+  .fa-angle-down {
+    color: $my-orange;
+    font-size: 14 px;
+  }
+  
+  .im-centered{
+    margin: auto; 
+    max-width: 200px;
+  }
+  
+  .logo{
+    background-image:url(asset-path('logo-o.png'));
+    background-size: cover;
+    float: left;
+    margin: 0 10px;
+    height: 40px;
+    width: 40px;
+  }
+  
+  .lg-txt {
+    line-height: 1.3rem;
+  }
+  
+  .jumb-title {
+    color: #fff;
+    text-align: center;
+    width: 100%;
+  }
+  
+  /*hide the orange dot*/
+  
+  @media (min-width: 768px){
+    .dot {
+      font-size: 15px;
+      color: $my-orange;
+      display: block;
+      padding: .3rem 1rem;
+      pointer-events:none;
+    }
+  }
+  @media only screen and (max-width: 767px) {
+    .dot-hide{
+      display: none;
+    }
+  }
+  
+  .filter-bar {
+    position: relative;
+    background-color: rgb(224, 224, 224);
+    padding: 10px;
+    color: #000;
+    flex-direction: column;
+    margin-bottom: 3em;
+  }
+  
+  .price {
+    margin: 0.9em;
+    color: rgb(95, 95, 95);
+    font-size: 13px;
+  }
+  
+  .dropdown-menu {
+    background-color: $my-orange;
+    border: none;
+    &:hover {
+      background: $my-orange;
+      color: #fff;
+    }
+  }
+  
+  .modal-body {
+    overflow-x: auto;
+  }
+
+  .orange-btn {
+    background: $my-orange;
+    border: 0;
+    &:hover {
+      background: $my-orange-light;
+    }
+  }

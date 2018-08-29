@@ -1,0 +1,53 @@
+@import 'variables';
+
+/*flat slidert style*/
+.flat-slider {
+  &.ui-corner-all, .ui-corner-all {
+    border-radius: 0;
+  }
+  &.ui-slider {
+    border: 0;
+    background: #eeeaea;
+    border-radius: 7px;
+    margin: 1.1em;
+  }
+  &.ui-slider-horizontal {
+    height: 6px;
+  }
+  &.ui-slider-vertical {
+    height: 15em;
+    width: 4px;
+  }
+  .ui-slider-handle {
+    width: 20px;
+    height: 20px;
+    background: #c9c9c9;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+  }
+  &.ui-slider-horizontal .ui-slider-handle {
+    top: 50%;
+    margin-top: -10px;
+  }
+  &.ui-slider-vertical .ui-slider-handle {
+    left: 50%;
+    margin-left: -10px;
+  }
+  .ui-slider-handle:hover {
+    opacity: .9;
+  }
+  .ui-slider-range {
+    border: 0;
+    border-radius: 7;
+    background: $my-orange;
+  }
+  &.ui-slider-horizontal .ui-slider-range {
+    top: 0;
+    height: 6px;
+  }
+  &.ui-slider-vertical .ui-slider-range {
+    left: 0;
+    width: 4px;
+  }
+}
