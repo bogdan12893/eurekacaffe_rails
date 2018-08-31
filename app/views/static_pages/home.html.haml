@@ -41,12 +41,12 @@
           .col-sm-2
             %p.price
             %p#rangeMax.price
-.container
-  .row
-    = render 'products/product_view'
+    
 .container
   #food-card.row
     / The card is generated in JS
+  .row
+    = render 'products/product_view'
 = javascript_tag do
   $(document).ready(function() {
   initPage();

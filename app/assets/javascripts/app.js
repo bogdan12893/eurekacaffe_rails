@@ -37,38 +37,24 @@ const MOCKED_FOOD = [
 },
 {
     id: 5,
-    name: "Waffles",
-    category: "Dessert",
-    price: 5.99,
-    photo: "https://d2bjx8mm52i6cz.cloudfront.net/r/i/575e6004-d811-4f13-b81c-dd18d7242e33_10x_299_195_75"
-},
-{
-    id: 6,
     name: "Churros",
     category: "Dessert",
     price: 5.99,
     photo: "https://d2bjx8mm52i6cz.cloudfront.net/r/i/0eaafbfe-695d-4700-9964-205066cd578c_10x_299_195_75"
 },
 {
-    id: 7,
+    id: 6,
     name: "Broccoli Cheddar",
     category: "Soup",
     price: 7.99,
     photo: "https://d2e147lbltb8cj.cloudfront.net/r/i/9b3f471b-0d5d-4e7a-a3be-7e0ade9e440a_10x_299_195_75"
 },
 {
-    id: 8,
+    id: 7,
     name: "Pizza Porcini e Noci",
     category: "Main Course",
     price: 8.99,
     photo: "https://d2bjx8mm52i6cz.cloudfront.net/r/i/41ebb1e5-2b1c-4375-ae86-443b8ef00b5c_10x_299_195_75"
-},
-{
-    id: 9,
-    name: "Pizza Salernitana",
-    category: "Main Course",
-    price: 8.99,
-    photo: "https://d2e147lbltb8cj.cloudfront.net/r/i/2cf3915d-9e8f-44d1-9335-eed2cf943285_10x_299_195_75"
 }
 ];
 //empty array where the foods will be stored
