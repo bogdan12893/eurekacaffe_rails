@@ -1,5 +1,7 @@
 class StaticPagesController < ApplicationController
   def home
+    @products = Product.all
+    @product = Product.new
   end
 
   def about

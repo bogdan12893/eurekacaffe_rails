@@ -1,0 +1,19 @@
+<% @products.each do |product| %>
+	<div class="col-sm-3">
+		<div class="card">
+			<img class="card-img-top" src="https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fcdn-image.foodandwine.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2F1519844002%2Ffast-food-mobile-apps-chick-fil-a-FT-BLOG0218.jpg%3Fitok%3D7d_gu0JA&w=700&q=85" alt="broken photo">
+			<div class="card-body">
+				<h5 class="card-title text-center"><%= product.title %></h5>
+				<h6 class="text-center"><%= product.description %></h6>
+				<p class="card-text text-center">$<%= product.price %></p>
+				<p class="card-text text-center">
+				<%= link_to 'Show', product_path(product) %>
+				<%= link_to 'Edit', edit_product_path(product) %>
+				<%= link_to 'Delete', product_path(product),
+						method: :delete,
+						data: { confirm: 'Are you sure?' } %>
+				</p>
+				</div>
+			</div>
+		</div>
+<% end %>
