@@ -2,7 +2,7 @@
   %table.table
     %thead
       %tr
-        %th{:scope => "col"} ID
+        %th{scope: "col"} ID
         %th{:scope => "col"} Title
         %th{:scope => "col"} Description
         %th{:scope => "col"} Price
@@ -10,4 +10,4 @@
       = render 'product_table_view'
 .container
   = link_to 'Back', root_path
-  = link_to 'New', products_path
+  = link_to 'New', products_new_path
