@@ -1,0 +1,41 @@
+/ Main jumbotron for a primary marketing message or call to action
+.jumbotron
+  .container
+    %nav.navbar.navbar-expand-md.navbar-dark
+      %a.navbar-brand{:href => "/"}
+        .logo
+        %p.lg-txt EurekaCaffe
+      %button.navbar-toggler{"data-target" => "#navbar7", "data-toggle" => "collapse", :type => "button"}
+        %span.navbar-toggler-icon
+      #navbar7.navbar-collapse.collapse.justify-content-stretch
+        %ul.navbar-nav.ml-auto
+          %li.nav-item
+            = link_to "HOME",    root_path, class: "nav-link"
+          %li.dot-hide
+            %p.dot ▪
+          %li.nav-item
+            = link_to "ABOUT",    about_path, class: "nav-link"
+          %li.dot-hide
+            %p.dot ▪
+          %li.nav-item
+            = link_to "SERVICE",    service_path, class: "nav-link"
+          %li.dot-hide
+            %p.dot ▪
+          %li.nav-item
+            = link_to "BLOG",    blog_path, class: "nav-link"
+          %li.dot-hide
+            %p.dot ▪
+          %li.nav-item
+            = link_to "CONTACT",    contact_path, class: "nav-link"
+  .container
+    %h1.display-3.jumb-title Ordering food
+    .row.im-centered
+      .col-xs
+        %svg{:height => "5", :width => "90"}
+          %line{:style => "stroke:rgb(255, 145, 0);stroke-width:2", :x1 => "90"}
+      .col-xs
+        %i.fas.fa-utensils.jumb-title
+      .col-xs
+        %svg{:height => "5", :width => "90"}
+          %line{:style => "stroke:rgb(255, 145, 0);stroke-width:2", :x1 => "90"}
+    %p.jumb-title First we eat, then we do everything else.

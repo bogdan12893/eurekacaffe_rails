@@ -171,9 +171,9 @@ function listFood(){
 function initalizeSlider() {
     //price range for food
     $('#flat-slider').slider({
-        max: 30,
+        max: 99,
         range: true,
-        values: [2, 25],
+        values: [5, 90],
         change: function(){
             foodPriceRange();
         }

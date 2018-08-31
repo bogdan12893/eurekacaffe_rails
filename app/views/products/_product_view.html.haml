@@ -1,0 +1,10 @@
+- @products.each do |product|
+  .col-sm-3
+    .card
+      = image_tag((product.photo), :class => "card-img-top")
+      .card-body
+        %h5.card-title.text-center= product.title
+        %h6.text-center= product.description
+        %p.card-text.text-center
+          $#{product.price}
+        %p.card-text.text-center

@@ -1,0 +1,15 @@
+.container
+  %p
+    %strong Title:
+    = @product.title
+  %p
+    %strong Description:
+    = @product.description
+  %p
+    %strong Price:
+    = @product.price
+  %p
+    %strong Photo:
+    = image_tag(@product.photo)
+  %p
+    = link_to 'Back', products_path

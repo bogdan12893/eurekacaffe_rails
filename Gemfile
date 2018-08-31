@@ -16,6 +16,7 @@ gem 'sprockets-rails', '~> 3.2', '>= 3.2.1'
 gem 'popper_js', '~> 1.14', '>= 1.14.3'
 #haml
 gem 'haml', '~> 5.0', '>= 5.0.4'
+gem 'haml-rails', '~> 1.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets

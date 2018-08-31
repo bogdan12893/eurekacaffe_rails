@@ -1,0 +1,10 @@
+.container
+  %table.table
+    %thead
+      %tr
+        %th{:scope => "col"} ID
+        %th{:scope => "col"} Title
+        %th{:scope => "col"} Description
+        %th{:scope => "col"} Price
+    %tbody
+      = render 'product_table_view'
