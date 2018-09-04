@@ -1,5 +1,5 @@
 - @products.each do |product|
-  .col-sm-3
+  .col-sm-3.product-food{"data-product-price" => "#{product.price}"}
     .card
       = image_tag((product.photo), :class => "card-img-top")
       .card-body
