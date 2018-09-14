@@ -27,6 +27,8 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'mini_racer', platforms: :ruby
 #bcrypt
 gem 'bcrypt', '~> 3.1', '>= 3.1.12'
+gem 'rubyzip', '~> 1.2', '>= 1.2.2'
+gem 'rails-controller-testing', '~> 1.0', '>= 1.0.2'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
