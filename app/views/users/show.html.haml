@@ -2,3 +2,5 @@
   %br
   = gravatar_for @user
   = @user.name
+  - if @user.admin?
+    = link_to 'New Product', products_path
