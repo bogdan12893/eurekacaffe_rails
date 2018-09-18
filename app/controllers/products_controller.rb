@@ -1,4 +1,6 @@
-class ProductsController < ApplicationController
+class ProductsController < ApplicationController	
+	before_action :admin_user,			only: [:index, :new, :edit, :create, :update, :destroy]
+
 	def index 
 		@products = Product.all
 	end
@@ -43,7 +45,12 @@ class ProductsController < ApplicationController
 	end
 
 	private 
+
 		def product_params
 			params.require(:product).permit(:title, :description, :price, :photo)
 		end
+
+		def admin_user
+      redirect_to(root_url) unless current_user.admin?
+    end
 end
