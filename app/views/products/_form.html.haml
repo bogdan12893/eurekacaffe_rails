@@ -1,20 +1,12 @@
 %container
   = render 'shared/error_messages_product'
-= form_with(model: @product, local: true) do |form|
-  %p
-    = form.label :title
-    %br/
-    = form.text_field :title
-  %p
-    = form.label :description
-    %br/
-    = form.text_area :description
-  %p
-    = form.label :price
-    %br/
-    = form.text_field :price
-    %p 
-    = form.file_field :photo
-    %br/
-  %p
-    = form.submit :save
+= form_with(model: @product, local: true) do |f|
+  = f.label :title
+  = f.text_field :title, class: 'form-control'
+  = f.label :description
+  = f.text_area :description, class: 'form-control'
+  = f.label :price
+  = f.text_field :price, class: 'form-control'
+  = f.file_field :photo, class: 'form-control'
+  %br
+  = f.submit :save, class: "btn orange-btn"

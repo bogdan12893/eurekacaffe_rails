@@ -24,8 +24,18 @@
   }
   
   /*custom color for nav link*/
-  
-  a, .nav-link{
+  a {
+    color: rgb(102, 102, 102);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 12px;
+    &:hover {
+      color: rgb(0, 0, 0);
+      text-decoration: none
+    }
+  }
+
+  .nav-link{
     color: rgb(0, 0, 0);
     font-weight: bold;
     font-size: 12px;
@@ -92,7 +102,7 @@
   
   .filter-bar {
     position: relative;
-    background-color: rgb(224, 224, 224);
+    background-color: $light-grey;
     padding: 10px;
     color: #000;
     flex-direction: column;
@@ -106,21 +116,20 @@
   }
   
   .dropdown-menu {
-    background-color: $my-orange;
+    background-color: rgba(255, 255, 255, 0);
+    top: 35%;
+    padding-left: 10%;
     border: none;
-    &:hover {
-      background: $my-orange;
+    color: rgb(95, 95, 95);
+    a:hover {
       color: #fff;
     }
-  }
-  
-  .modal-body {
-    overflow-x: auto;
   }
 
   .orange-btn {
     background: $my-orange;
     border: 0;
+    color: #fff;
     &:hover {
       background: $my-orange-light;
     }
@@ -130,4 +139,35 @@
     width: 100%;
     height: 10vw;
     object-fit: cover;
-}
+  }
+
+  .page-link {
+    color: $my-orange;
+    &:hover {
+      color: $my-orange-dark
+    }
+  }
+
+  .page-item.active {
+    .page-link {
+      z-index: 1;
+      color: #fff;
+      background-color: $my-orange;
+      border-color: $my-orange;
+    }
+  }
+
+  .title-bar {
+    background-color: $light-grey;
+    width: 100vw;
+    position: relative;
+    margin-left: -50vw;
+    height: 50px;
+    left: 50%;
+    margin-bottom: 2vw;
+    h4 {
+      color: $dark-grey;
+      text-align: center;
+      margin-top: 10px;
+    }
+  }

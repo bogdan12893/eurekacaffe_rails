@@ -1,4 +1,7 @@
 .container
+  .row
+    .title-bar
+      %h4 Product List
   %table.table
     %thead
       %tr
@@ -6,6 +9,7 @@
         %th{:scope => "col"} Title
         %th{:scope => "col"} Description
         %th{:scope => "col"} Price
+        %th{:scope => "col"} Options
     %tbody
       = render 'product_table_view'
 .container
