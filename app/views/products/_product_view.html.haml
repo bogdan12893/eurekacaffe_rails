@@ -8,3 +8,11 @@
         %p.card-text.text-center
           $#{product.price}
         %p.card-text.text-center
+        -if logged_in?
+          .col-sm-4
+            = form_for(@order_item, remote: true) do |f|
+              = f.hidden_field :product_id, value: product.id
+              .form-group
+                = f.text_field :quantity, value: 1, min: 1, class: 'form-control'
+              = f.submit "Add to cart", class: 'btn orange-btn btn-sm'
+
