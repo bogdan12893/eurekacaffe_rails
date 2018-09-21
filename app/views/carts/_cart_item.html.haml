@@ -2,7 +2,7 @@
   .row
     .title-bar
       %h4 Cart
-- if !@order_item.nil? && @order_item.errors.any?
+- if @order_item.present? && @order_item.errors.any?
   %ul
     - @order_item.errors.full_messages.each do |msg|
       %li= msg
@@ -27,7 +27,11 @@
               = f.submit "Update Quantity", class: 'btn btn-success btn-sm'
               = link_to "Delete", item, method: :delete, remote: true, class: 'btn btn-danger btn-sm'
       %hr
-            
+  .container.d-flex.justify-content-end
+    .btn-group
+      = link_to "Empty cart", carts_path(@order_items),method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-danger btn-sm'
+      = link_to "Sent Order", root_path, class: 'btn orange-btn btn-sm' 
+
 - else
   .container.text-center
     %h3 Your <i class="fas fa-shopping-cart"></i> is empty

@@ -1,9 +1,17 @@
 class CartsController < ApplicationController
 	before_action :logged_in_user
+	before_action :current_order
 	
   def show
 		@order_items = current_order.order_items
 	end
+
+	def destroy
+		@order_items = current_order.order_items
+		@order_items.destroy
+    # session[:order_id] = nil
+    redirect_to carts_path
+  end
 
 	private 
 		def logged_in_user
