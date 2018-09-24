@@ -1,0 +1,16 @@
+.container
+  .row
+    .title-bar
+      %h4 Orders
+  %table.table
+    %thead
+      %tr
+        %th{scope: "col"} Order Nr
+        %th{scope: "col"} User Name
+        %th{scope: "col"} Email
+        %th{scope: "col"} Total Price
+        %th{scope: "col"} Date & Time
+    %tbody
+      = render partial: 'orders/row', collection: @orders, as: :order
+.container
+  = link_to 'Back', current_user

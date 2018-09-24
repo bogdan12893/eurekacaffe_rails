@@ -47,7 +47,6 @@ ActiveRecord::Schema.define(version: 2018_09_19_104351) do
     t.integer "user_id"
     t.float "subtotal"
     t.float "total"
-    t.float "tax"
     t.float "shipping"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

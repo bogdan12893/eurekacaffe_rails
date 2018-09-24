@@ -13,5 +13,8 @@
       .btn-group{"aria-label" => "Basic example", :role => "group"}
         %button.btn.btn-light= link_to 'New Product', products_path
         %button.btn.btn-light= link_to 'Users', users_path
-        %button.btn.btn-light= link_to 'Orders'
+        %button.btn.btn-light= link_to 'Orders', orders_path
+    - else
+      %button.btn.btn-light= link_to 'My Orders', orders_path
+
 

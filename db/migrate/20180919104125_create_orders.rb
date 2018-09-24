@@ -4,7 +4,6 @@ class CreateOrders < ActiveRecord::Migration[5.2]
       t.integer :user_id
       t.float :subtotal
       t.float :total
-      t.float :tax
       t.float :shipping
 
       t.timestamps

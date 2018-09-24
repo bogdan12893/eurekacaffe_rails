@@ -9,10 +9,10 @@ class CartsController < ApplicationController
 	def destroy
 		@order_items = current_order.order_items
 		@order_items.destroy
-    # session[:order_id] = nil
+		flash[:danger] = "All products were removed."
     redirect_to carts_path
-  end
-
+	end
+	
 	private 
 		def logged_in_user
 			unless logged_in?
