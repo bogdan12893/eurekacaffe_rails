@@ -1,4 +1,4 @@
-.container
+.container.text-center
   .row
     .title-bar
       %h4 Product Detail
@@ -12,7 +12,9 @@
     %strong Price:
     = @product.price
   %p
+    %hr
     %strong Photo:
-    = image_tag(@product.photo)
+  = image_tag((@product.photo), :class => "show-photo")
   %p
-    = link_to 'Back', products_path
+  %hr
+    = link_to 'Back', products_path, class: "btn orange-btn sm"

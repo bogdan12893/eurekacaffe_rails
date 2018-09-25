@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2018_09_19_104351) do
     t.float "total"
     t.float "shipping"
     t.boolean "sent"
+    t.boolean "complete"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id", "created_at"], name: "index_orders_on_user_id_and_created_at"

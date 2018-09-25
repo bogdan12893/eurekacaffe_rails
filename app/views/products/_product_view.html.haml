@@ -2,17 +2,14 @@
   .col-sm-3.product-food{"data-product-price" => "#{product.price}"}
     .card
       = image_tag((product.photo), :class => "card-img-top")
-      .card-body
-        %h5.card-title.text-center= product.title
-        %h6.text-center= product.description
-        %p.card-text.text-center
+      .card-body.text-center
+        %h5.card-title= product.title
+        %h6= product.description
+        %p.card-text
           $#{product.price}
-        %p.card-text.text-center
         -if logged_in?
-          .col-sm-4
-            = form_for(@order_item, remote: true) do |f|
-              = f.hidden_field :product_id, value: product.id
-              .form-group
-                = f.text_field :quantity, value: 1, min: 1, class: 'form-control'
-              = f.submit "Add to cart", class: 'btn orange-btn btn-sm'
+          = form_for(@order_item, remote: true) do |f|
+            = f.hidden_field :product_id, value: product.id
+            = f.hidden_field :quantity, value: 1, min: 1
+            = f.submit "Add to cart", class: 'btn orange-btn btn-sm'
 

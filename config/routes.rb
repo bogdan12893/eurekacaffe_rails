@@ -19,7 +19,10 @@ Rails.application.routes.draw do
   resources :products
   resources :orders
   resources :order_items
-  resource  :carts
+  resource  :carts, except: [:destroy] do
+    delete :empty, on: :collection
+  end
+
   resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]

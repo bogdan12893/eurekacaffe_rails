@@ -5,4 +5,4 @@
     %td= order.user.email
     %td= "$" + order.total.to_s
     %td= order.created_at.strftime("%m/%d/%Y at %I:%M%p")
-    %td= link_to "Delete", order, method: :delete, data: { confirm: "You sure?" }
+    %td= link_to "Delete", order, method: :delete, data: { confirm: "You sure?" }                                   

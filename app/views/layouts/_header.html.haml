@@ -36,7 +36,7 @@
               %a.dropdown-toggle.nav-link{"data-toggle" => "dropdown", :href => "#"}
                 ACCOUNT 
                 %b.caret
-              %ul.dropdown-menu
+              %ul.dropdown-menu.dropdown-menu-header
                 %li= link_to "PROFILE", current_user
                 %li= render 'carts/cart'
                 %li= link_to "SETTINGS", edit_user_path(current_user)
