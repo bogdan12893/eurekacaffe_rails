@@ -12,6 +12,12 @@ class CartsController < ApplicationController
 		flash[:danger] = "All products were removed."
     redirect_to carts_path
 	end
+
+	def create
+		@order = current_order
+		@order.update(sent: true)
+		redirect_to orders_path if @order.save
+	end
 	
 	private 
 		def logged_in_user

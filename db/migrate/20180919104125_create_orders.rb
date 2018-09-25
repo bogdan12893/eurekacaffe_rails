@@ -5,6 +5,7 @@ class CreateOrders < ActiveRecord::Migration[5.2]
       t.float :subtotal
       t.float :total
       t.float :shipping
+      t.boolean :sent
 
       t.timestamps
     end

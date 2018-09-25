@@ -32,7 +32,9 @@
     %p Total Order: $#{current_order.total}
     .row.btn-group
     -# = link_to "Empty cart", carts_path(current_order.destroy),method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-danger btn-sm'
-    = link_to "Sent Order", root_path, class: 'btn orange-btn btn-sm'
+  = form_for carts_path  do |f|
+    .container.text-right
+      = f.submit "Send Order", class: 'btn orange-btn btn-sm'
 - else
   .container.text-center
     %h3 Your <i class="fas fa-shopping-cart"></i> is empty
