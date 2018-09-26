@@ -10,7 +10,10 @@
         %th{scope: "col"} Email
         %th{scope: "col"} Total Price
         %th{scope: "col"} Date & Time
-        %th{scope: "col"} Options
+        - if current_user.admin?
+          %th{scope: "col"} Options
+          %th{scope: "col"} Status
+          %th{scope: "col"}
     %tbody
       = render partial: 'orders/row', collection: @orders, as: :order
 .container

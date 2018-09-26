@@ -7,9 +7,16 @@ class OrdersController < ApplicationController
 
   def destroy
     Order.find(params[:id]).destroy
-    flash[:success] = "Order canceled"
+    flash[:success] = "Order Canceled"
     redirect_to orders_url
   end
+
+  def toggle
+    @order = Order.find(params[:order_id])
+    all_orders
+    @order.update_attributes(:complete => params[:complete])
+  end
+  
 
   private 
     def set_orders
@@ -17,6 +24,13 @@ class OrdersController < ApplicationController
         @orders = Order.where(sent: true)
       else
         @orders = current_user.orders
+      end
+    end
+
+    def all_orders
+      @orders = Order.all
+      respond_to do |format|
+        format.js
       end
     end
 end
