@@ -9,9 +9,8 @@
       %td= link_to "Delete", order, method: :delete, data: { confirm: "You sure?" }
       %td= check_box_tag 'complete', order.id , order.complete, :class => "order-check"
       - if order.complete?
-        %td
+        %td{ :id => "not-complete-#{order.id}" }
           %p Complete
       - else
-        %td
-          .not-complete
-            %p Not Complete
+        %td{ :id => "not-complete-#{order.id}" }    
+          %p Not Complete

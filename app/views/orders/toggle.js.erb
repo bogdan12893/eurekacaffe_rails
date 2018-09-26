@@ -1,1 +1,5 @@
-$(".not-complete").html("Complete")
+<%if @order.complete? %>
+  $("#not-complete-<%= @order.id %>").html("Complete")
+<% else %>
+  $("#not-complete-<%= @order.id %>").html("Not Complete")
+<% end %>

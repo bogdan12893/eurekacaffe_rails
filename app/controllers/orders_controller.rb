@@ -14,6 +14,9 @@ class OrdersController < ApplicationController
   def toggle
     @order = Order.find(params[:order_id])
     all_orders
+    respond_to do |format|
+      format.js
+    end
     @order.update_attributes(:complete => params[:complete])
   end
   
@@ -29,8 +32,5 @@ class OrdersController < ApplicationController
 
     def all_orders
       @orders = Order.all
-      respond_to do |format|
-        format.js
-      end
     end
 end
