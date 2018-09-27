@@ -13,3 +13,54 @@
     border-bottom: 1px solid black;
   }
 }
+
+.nav-button {
+  background-color: $light-grey;
+  height: 100px;
+  width: 100px;
+  font-size: 13pt;
+  padding: 20px 10px;
+  text-align: center;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 4px;
+  &:hover span{
+    display: none;
+  }
+  &:hover > b{
+    display: block;
+  }
+  b {
+    display: none;
+  }
+}
+
+.product-list {
+  transition: transform .2s;
+  &:hover {
+    background-color: rgb(255, 184, 184);
+    transform: scale(1.05);
+    transition: all 0.2s ease-in-out;
+    z-index:1;
+  }
+}
+
+.user-list {
+  transition: transform .2s;
+  &:hover {
+    background-color: rgb(236, 255, 184);
+    transform: scale(1.05);
+    transition: all 0.2s ease-in-out;
+    z-index:1;
+  }
+}
+
+.order-list {
+  transition: transform .2s;
+  &:hover {
+    background-color: rgb(184, 253, 255);
+    transform: scale(1.05);
+    transition: all 0.2s ease-in-out;
+    z-index:1;
+  }
+}
