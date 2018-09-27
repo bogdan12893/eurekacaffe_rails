@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Order < ApplicationRecord
   has_many :order_items
   belongs_to :user
@@ -17,15 +19,16 @@ class Order < ApplicationRecord
   end
 
   private
-    def set_subtotal
-      self[:subtotal] = subtotal
-    end
 
-    def set_total
-      self[:total] = total
-    end
+  def set_subtotal
+    self[:subtotal] = subtotal
+  end
 
-    def set_shipping
-      self[:shipping] = shipping
-    end
+  def set_total
+    self[:total] = total
+  end
+
+  def set_shipping
+    self[:shipping] = shipping
+  end
 end

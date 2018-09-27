@@ -19,21 +19,12 @@
 //= require turbolinks
 //= require_tree .
 
-$(document).ready(function() {
+$(document).on("turbolinks:load", function() {
   $(".order-check").bind('change', function(){
-    if (this.checked){
-      $.ajax({
-        url: '/orders/'+this.value+'/toggle',
-        type: 'POST',
-        data: {"complete": this.checked}
-      });
-    }
-    else {
-      $.ajax({
-        url: '/orders/'+this.value+'/toggle',
-        type: 'POST',
-        data: {"complete": this.false}
-      });
-    }
+    $.ajax({
+      url: '/orders/' + this.value + '/toggle',
+      type: 'POST',
+      data: {"complete": this.checked}
+    });
   });
 });
