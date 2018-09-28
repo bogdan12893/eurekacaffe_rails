@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 module CartsHelper
-  # Current order
   def current_order
     unless @_current_order
       @_current_order = Order.where(sent: false).find_by_user_id(current_user.id)

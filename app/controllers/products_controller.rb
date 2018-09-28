@@ -24,8 +24,10 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
 
     if @product.save
+      flash[:success] = 'Product was saved.'
       redirect_to @product
     else
+      flash[:danger] = 'Product not saved.'
       render 'new'
     end
   end

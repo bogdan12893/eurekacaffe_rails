@@ -5,7 +5,7 @@ class CartsController < ApplicationController
 
   def show
     @order_items = current_order.order_items
-   end
+  end
 
   def empty
     @order_items = current_order.order_items
@@ -18,5 +18,6 @@ class CartsController < ApplicationController
     @order = current_order
     @order.update(sent: true)
     redirect_to orders_path if @order.save
+    # flash[:success] = 'Order was placed successfully.'
   end
 end

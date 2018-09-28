@@ -25,10 +25,6 @@ class OrdersController < ApplicationController
   private
 
   def set_orders
-    @orders = if current_user.admin?
-                Order.where(sent: true)
-              else
-                current_user.orders
-              end
+    @orders = current_user.admin? ? Order.where(sent: true) : current_user.orders
   end
 end
