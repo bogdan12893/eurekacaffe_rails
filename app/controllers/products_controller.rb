@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ProductsController < ApplicationController
-  before_action :admin_user, only: %i[index new edit create update destroy]
+  before_action :is_admin?, only: %i[index new edit create update destroy]
 
   def index
     @products = Product.all
@@ -55,7 +55,7 @@ class ProductsController < ApplicationController
     params.require(:product).permit(:title, :description, :price, :photo)
   end
 
-  def admin_user
+  def is_admin?
     redirect_to(root_url) unless current_user.admin?
   end
 end

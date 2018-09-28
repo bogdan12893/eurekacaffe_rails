@@ -18,7 +18,7 @@ class OrderItemsController < ApplicationController
 
   def update
     @order_item = @order.order_items.find(params[:id])
-    @order_item.update_attributes(order_item_params)
+    redirect_to carts_path if @order_item.update_attributes(order_item_params)
     @order_items = @order.order_items
   end
 

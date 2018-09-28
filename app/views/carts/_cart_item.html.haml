@@ -29,7 +29,7 @@
       %hr
   .container.text-right
     %p Shipping Tax: $#{current_order.shipping}
-    %p Total Order: $#{current_order.total}
+    %p Total Order: $#{number_with_precision(current_order.total, :precision => 2)}
     = form_for carts_path  do |f|
       .container.text-right
         .row.btn-group
