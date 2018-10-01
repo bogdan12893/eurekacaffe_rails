@@ -3,7 +3,6 @@
 class Order < ApplicationRecord
   has_many :order_items
   belongs_to :user
-  before_save :set_subtotal, :set_shipping, :set_total
   validates :user_id, presence: true
 
   def subtotal
@@ -11,24 +10,10 @@ class Order < ApplicationRecord
   end
 
   def total
-    subtotal + shipping
+    subtotal + shipping_tax
   end
 
-  def shipping
+  def shipping_tax
     shipping = 5
-  end
-
-  private
-
-  def set_subtotal
-    self[:subtotal] = subtotal
-  end
-
-  def set_total
-    self[:total] = total
-  end
-
-  def set_shipping
-    self[:shipping] = shipping
   end
 end

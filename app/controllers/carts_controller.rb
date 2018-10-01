@@ -18,6 +18,5 @@ class CartsController < ApplicationController
     @order = current_order
     @order.update(sent: true)
     redirect_to orders_path if @order.save
-    # flash[:success] = 'Order was placed successfully.'
   end
 end

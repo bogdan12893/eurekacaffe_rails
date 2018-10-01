@@ -2,19 +2,20 @@
 
 class OrdersController < ApplicationController
   before_action :logged_in_user
+  before_action :set_order, only: [:toggle, :destroy]
 
   def index
     set_orders
   end
 
   def destroy
-    Order.find(params[:id]).destroy
-    flash[:success] = 'Order Canceled'
+    @order.destroy
+    flash[:danger] = 'Order Canceled'
     redirect_to orders_url
   end
 
   def toggle
-    @order = Order.find(params[:order_id])
+    @order
     @orders = Order.all
     respond_to do |format|
       format.js
@@ -24,7 +25,12 @@ class OrdersController < ApplicationController
 
   private
 
+  def set_order
+    @order = Order.find(params[:id])
+  end
+
   def set_orders
     @orders = current_user.admin? ? Order.where(sent: true) : current_user.orders
+    flash[:success] = 'Order placed'
   end
 end

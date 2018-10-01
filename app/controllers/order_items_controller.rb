@@ -12,21 +12,21 @@ class OrderItemsController < ApplicationController
     else
       flash[:danger] = 'Item not placed'
     end
+
     session[:order_id] = @order.id
     redirect_to root_path
   end
 
   def update
     @order_item = @order.order_items.find(params[:id])
+    
     redirect_to carts_path if @order_item.update_attributes(order_item_params)
-    @order_items = @order.order_items
   end
 
   def destroy
     @order_item = @order.order_items.find(params[:id])
-    @order_item.destroy
-    @order_items = @order.order_items
-    redirect_to carts_path
+
+    redirect_to carts_path if @order_item.destroy
   end
 
   private

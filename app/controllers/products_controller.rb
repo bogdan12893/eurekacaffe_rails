@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ProductsController < ApplicationController
-  before_action :is_admin?, only: %i[index new edit create update destroy]
+  before_action :is_admin?, only: [:index, :new, :edit, :create, :update, :destroy]
 
   def index
     @products = Product.all
