@@ -1,0 +1,11 @@
+.container
+  .row
+    .title-bar
+      %h4 Update your profile
+  .row.justify-content-center
+    .col-md-6
+      =render 'form'
+      %br
+      .gravatar_edit
+        = gravatar_for @user
+        %a{:href => "http://gravatar.com/emails", :target => "_blank"} change

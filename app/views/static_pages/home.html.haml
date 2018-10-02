@@ -1,47 +1,4 @@
-/ Sorting Bar
-.filter-bar
-  .container
-    .row
-      .col-sm-7
-        %nav.navbar.navbar-expand-lg
-          #navbarSupportedContent
-            %ul.navbar-nav.mr-auto
-              %li.nav-item.dropdown
-                %a#navbarDropdown.nav-link{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-                  CATEGORY
-                  %i.fas.fa-angle-down
-                .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
-                  %a.dropdown-item{:href => "#"} Category 1
-                  .dropdown-divider
-                  %a.dropdown-item{:href => "#"} Category 2
-              %li.nav-item.dropdown
-                %a#navbarDropdown.nav-link{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-                  SORTING
-                  %i.fas.fa-angle-down
-                .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
-                  %a.dropdown-item{:href => "#"} Sorting 1
-                  .dropdown-divider
-                  %a.dropdown-item{:href => "#"} Sorting 2
-              %li.nav-item.dropdown
-                %a#navbarDropdown.nav-link{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-                  VEGETARIAN
-                  %i.fas.fa-angle-down
-                .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
-                  %a.dropdown-item{:href => "#"} Vegetarian 1
-                  .dropdown-divider
-                  %a.dropdown-item{:href => "#"} Vegetarian 2
-      / Price range slider
-      .col-sm-5
-        .row
-          .col-sm-3
-            %p.price
-              PRICE
-              %span#rangeMin.price
-          #flat-slider.flat-slider.col-sm-6
-          .col-sm-2
-            %p.price
-            %p#rangeMax.price
-    
+= render 'layouts/filterbar'
 .container
   #food-card.row
     / The card is generated in JS

@@ -25,6 +25,15 @@ gem 'sass-rails', '~> 5.0', '>= 5.0.7'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
+#bcrypt
+gem 'bcrypt', '~> 3.1', '>= 3.1.12'
+gem 'rubyzip', '~> 1.2', '>= 1.2.2'
+gem 'rails-controller-testing', '~> 1.0', '>= 1.0.2'
+gem 'faker', '~> 1.9', '>= 1.9.1'
+gem 'will_paginate', '~> 3.1', '>= 3.1.6'
+gem 'bootstrap-will_paginate', '~> 1.0'
+
+gem 'letter_opener', '~> 1.6'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -59,6 +68,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'rubocop', '~> 0.59.2'
 end
 
 group :test do

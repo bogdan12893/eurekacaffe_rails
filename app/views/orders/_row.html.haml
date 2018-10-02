@@ -1,0 +1,16 @@
+.container
+  %tr
+    %th= order.id
+    %td= order.user.name
+    %td= order.user.email
+    %td= "$" + order.total.to_s
+    %td= order.created_at.strftime("%m/%d/%Y at %I:%M%p")
+    - if current_user.admin?
+      %td= link_to "Delete", order, method: :delete, data: { confirm: "You sure?" }
+      %td= check_box_tag 'complete', order.id , order.complete, :class => "order-check"
+      - if order.complete?
+        %td{ :id => "not-complete-#{order.id}" }
+          %p Complete
+      - else
+        %td{ :id => "not-complete-#{order.id}" }    
+          %p Not Complete

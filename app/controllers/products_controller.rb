@@ -1,49 +1,61 @@
+# frozen_string_literal: true
+
 class ProductsController < ApplicationController
-	def index 
-		@products = Product.all
-	end
+  before_action :is_admin?, only: [:index, :new, :edit, :create, :update, :destroy]
 
-	def show
-		@product = Product.find(params[:id])
-	end
+  def index
+    @products = Product.all
+    @order_item = current_order.order_items.new
+  end
 
-	def new
-		@product = Product.new
-	end
+  def show
+    @product = Product.find(params[:id])
+  end
 
-	def edit
-		@product = Product.find(params[:id])
-	end
-	
-	def create
-		@product = Product.new(product_params)
- 
-		if @product.save
-			redirect_to @product
-		else
-			render 'new'
-		end
-	end
-	
-	def update
-		@product = Product.find(params[:id])
-	 
-		if @product.update(product_params)
-			redirect_to @product
-		else
-			render 'edit'
-		end
-	end
+  def new
+    @product = Product.new
+  end
 
-	def destroy
-		@product = Product.find(params[:id])
-		@product.destroy
-	 
-		redirect_to products_path
-	end
+  def edit
+    @product = Product.find(params[:id])
+  end
 
-	private 
-		def product_params
-			params.require(:product).permit(:title, :description, :price, :photo)
-		end
+  def create
+    @product = Product.new(product_params)
+
+    if @product.save
+      flash[:success] = 'Product was saved.'
+      redirect_to @product
+    else
+      flash[:danger] = 'Product not saved.'
+      render 'new'
+    end
+  end
+
+  def update
+    @product = Product.find(params[:id])
+
+    if @product.update(product_params)
+      redirect_to @product
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+
+    redirect_to products_path
+  end
+
+  private
+
+  def product_params
+    params.require(:product).permit(:title, :description, :price, :photo)
+  end
+
+  def is_admin?
+    redirect_to(root_url) unless current_user.admin?
+  end
 end

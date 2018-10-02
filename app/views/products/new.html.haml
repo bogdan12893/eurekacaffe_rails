@@ -1,4 +1,8 @@
 .container
-  %h1 New Product
-  = render 'form'
-  = link_to 'Back', products_path
+  .row
+    .title-bar
+      %h4 New Product
+  .row.justify-content-center
+    .col-md-6
+      = render 'form'
+      = link_to 'Back', products_path

@@ -1,0 +1,9 @@
+.container
+  .row
+    .title-bar
+      %h4 All users
+  %ul.users
+    - @users.each do |user|
+      = render user
+  %br
+  = will_paginate(@things, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer)

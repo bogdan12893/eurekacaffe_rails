@@ -18,3 +18,13 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+$(document).on("turbolinks:load", function() {
+  $(".order-check").bind('change', function(){
+    $.ajax({
+      url: '/orders/' + this.value + '/toggle',
+      type: 'POST',
+      data: {"complete": this.checked}
+    });
+  });
+});
